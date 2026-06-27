@@ -18,4 +18,6 @@ slack:
   channels:
     - sprint-main
     - agent-coder
+    - agent-log
     - human-review
+    - ci-cd
