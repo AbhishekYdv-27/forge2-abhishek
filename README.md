@@ -30,7 +30,7 @@ Laravel 11 . PHP 8.2 . MySQL 8 . Laravel Sanctum . React 19 . Vite . Tailwind
 - customer@acme.test / password
 
 ## Live URL
-<paste if deployed, else: "runs locally per the steps above">
+https://forge2-abhishek.vercel.app/
 
 ## Where my evidence lives (everything is in THIS repo -- no Drive, no video)
 - agents/        -- real Hermes + OpenClaw configs (secrets redacted)
