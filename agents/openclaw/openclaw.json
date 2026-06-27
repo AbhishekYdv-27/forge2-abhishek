@@ -1,12 +1,16 @@
 {
-  "_comment": "OpenClaw (coder) -- EastRouter config. Secrets REDACTED on purpose.",
-  "model": { "base_url": "https://api.eastrouter.com/v1", "api_key": "${EASTROUTER_API_KEY}", "model": "z-ai/glm-5.1" },
-  "channels": {
-    "slack": {
-      "enabled": true,
-      "appToken": { "source": "env", "id": "SLACK_APP_TOKEN" },
-      "botToken": { "source": "env", "id": "SLACK_BOT_TOKEN" },
-      "channels": ["#agent-coder", "#agent-log", "#ci-cd"]
-    }
-  }
+  "provider": "anthropic",
+  "base_url": "https://api.eastrouter.com/api/anthropic",
+  "api_key": "${EASTROUTER_API_KEY}",
+  "model": "z-ai/glm-5.1",
+  "workspace": {
+    "root": "./",
+    "command_execution": true
+  },
+  "slack": {
+    "enabled": true,
+    "bot_token": "${SLACK_BOT_TOKEN}",
+    "channels": ["agent-coder", "agent-log", "ci-cd"]
+  },
+  "tools": ["read_file", "write_file", "execute_command", "create_file"]
 }
