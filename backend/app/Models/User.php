@@ -17,9 +17,16 @@ class User extends Authenticatable
 
     protected $hidden = ['password', 'remember_token'];
 
-    protected $casts = ['email_verified_at' => 'datetime'];
+    protected function casts(): array {
+        return [
+            'email_verified_at' => 'datetime',
+            'password' => 'hashed',
+        ];
+    }
 
     public function organization() { return $this->belongsTo(Organization::class); }
     public function tickets()      { return $this->hasMany(Ticket::class, 'requester_id'); }
     public function assignedTickets() { return $this->hasMany(Ticket::class, 'assignee_id'); }
+    public function comments() { return $this->hasMany(Comment::class); }
+    public function activityLogs() { return $this->hasMany(ActivityLog::class); }
 }
